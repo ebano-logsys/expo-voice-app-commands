@@ -13,7 +13,7 @@ const testCommands: Command[] = [{
   callback: () => {
       // do some random stuff
   },
-  response: 'Your soup is ready!'
+  response: 'Hola bro, ¿Cómo estás?, como ves, no sé hablar español.'
 }]
 
 export default function TabTwoScreen() { 
@@ -26,7 +26,8 @@ export default function TabTwoScreen() {
         <ThemedText type="title">Explore</ThemedText>
       </ThemedView>
       <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <ThemedText>{transcript}</ThemedText>
+      <ThemedText>{testCommands.map((command) => `Comando: ${command.key}\n Respuesta: ${command.response}`)}</ThemedText>
+      <ThemedText>Voz siendo detectada:{"\n" + transcript}</ThemedText>
     </ParallaxScrollView>
   );
 }
